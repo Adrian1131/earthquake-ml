@@ -6,7 +6,9 @@ from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
 from sklearn.utils.class_weight import compute_sample_weight
 from sklearn.metrics import classification_report
-
+'''
+Initial libraries for each of our tests, copying for easier use. 
+'''
 
 df = pd.read_csv('earthquake_data.csv')
 
@@ -51,14 +53,16 @@ def clean_earthquake_data(df):
     target_encoder = LabelEncoder()
     df['alert'] = target_encoder.fit_transform(df['alert'])
 
-    # Standardize numerical features
-    scaler = StandardScaler()
-    feature_cols = df.columns.drop('alert')
-    df[feature_cols] = scaler.fit_transform(df[feature_cols])
-
     # Final X and y
     X = df.drop(columns=['alert'])
     y = df['alert']
+
+    # Standardize numerical features
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+
+    feature_cols = df.columns.drop('alert')
+    df[feature_cols] = X_scaled
 
     return X, y, target_encoder
 
@@ -94,6 +98,14 @@ print("Test set size:", X_test.shape)
 random_forest_model = RandomForestClassifier(class_weight='balanced', random_state=42)
 random_forest_model.fit(X_train, y_train)
 random_forest_predictions = random_forest_model.predict(X_test)
+
+"""
+Temporary RF test for feature selection, 
+"""
+rf_temp = RandomForestClassifier(random_state=42)
+rf_temp.fit(X_train, y_train)
+feature_importances = pd.Series(rf_temp.feature_importances_, index=X.columns)
+print(feature_importances.sort_values(ascending=False))
 
 print("\n=== Random Forest Evaluation ===")
 print(classification_report(y_test, random_forest_model.predict(X_test)))
