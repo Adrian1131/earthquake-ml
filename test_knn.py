@@ -1,13 +1,4 @@
 import pandas as pd
-import numpy as np
-from sklearn.preprocessing import LabelEncoder, StandardScaler
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.neural_network import MLPClassifier
-from sklearn.metrics import classification_report, accuracy_score
-from sklearn.utils import resample, compute_sample_weight
-from sklearn.impute import SimpleImputer
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 """
