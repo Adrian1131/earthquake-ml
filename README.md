@@ -1,10 +1,10 @@
-🌍 Earthquake Severity Prediction using Machine Learning (2001–2023)
+# 🌍 Earthquake Severity Prediction using Machine Learning (2001–2023)
 A machine learning system to classify and analyze earthquake severity based on real-world seismic data using Python, AI, and data science techniques.
 
-📌 Project Overview
+## 📌 Project Overview
 This project applies supervised machine learning algorithms to seismic data from 2001 to 2023 to classify earthquake severity into four alert levels (green, yellow, orange, red). The ultimate goal is to build a data-driven tool that can assist early warning systems, emergency response, and public safety efforts in high-risk regions.
 
-We implemented multiple classification models including:
+## We implemented multiple classification models including:
 
 🌲 Random Forest
 
@@ -14,106 +14,107 @@ We implemented multiple classification models including:
 
 We explored the challenges of class imbalance, missing data, and realistic modeling of rare catastrophic events.
 
-👥 Team Members
+## 👥 Team Members
+
 Adrian Flores – Data preprocessing, model development, poster creation, result analysis
 
 Fabrice Polica – Feature engineering, model research, final report writing
 
-🧠 Key Objectives
-Predict earthquake severity using AI techniques
+## 🧠 Key Objectives
+* Predict earthquake severity using AI techniques
 
-Use Python's data science libraries for preprocessing, visualization, and modeling
+* Use Python's data science libraries for preprocessing, visualization, and modeling
 
-Handle real-world constraints like missing values and class imbalance
+* Handle real-world constraints like missing values and class imbalance
 
-Support real-world disaster risk analysis through interpretable models
+* Support real-world disaster risk analysis through interpretable models
 
-📊 Dataset
-Source: Kaggle - Earthquake Dataset (2001–2023)
+## 📊 Dataset
+* Source: Kaggle - Earthquake Dataset (2001–2023)
 
-~782 seismic events from over 780 locations
+* ~782 seismic events from over 780 locations
 
-Features include magnitude, depth, location, alert level, and instrumental intensities
+* Features include magnitude, depth, location, alert level, and instrumental intensities
 
-Features Used
-magnitude, depth, latitude, longitude, cdi, mmi, sig, tsunami, alert (target)
+### Features Used
+* magnitude, depth, latitude, longitude, cdi, mmi, sig, tsunami, alert (target)
 
-Geolocation and metadata (e.g., country, continent, location)
+* Geolocation and metadata (e.g., country, continent, location)
 
-Preprocessing included encoding, imputation, and clustering (K-Means) for spatial insight
+* Preprocessing included encoding, imputation, and clustering (K-Means) for spatial insight
 
-🧪 Methodology
-Preprocessing
-Missing value handling (drop/impute)
+## 🧪 Methodology
+### Preprocessing
+* Missing value handling (drop/impute)
 
-Feature encoding (label encoding and one-hot encoding)
+* Feature encoding (label encoding and one-hot encoding)
 
-K-Means clustering for geographic analysis
+* K-Means clustering for geographic analysis
 
-Class balancing using manual oversampling and weighting
+* Class balancing using manual oversampling and weighting
 
-Classifiers
-Random Forest
+## Classifiers
+* Random Forest
 
-Artificial Neural Network (Scikit-learn MLPClassifier)
+* Artificial Neural Network (Scikit-learn MLPClassifier)
 
-Support Vector Machine
+* Support Vector Machine
 
-K-Means Clustering (for unsupervised spatial analysis)
+* K-Means Clustering (for unsupervised spatial analysis)
 
-Evaluation Metrics
+* Evaluation Metrics
 Accuracy
 
-Precision
+* Precision
 
-Recall
+* Recall
 
-F1 Score
+* F1 Score
 
-📈 Results Summary
+## 📈 Results Summary
 Test	Methodology	Key Takeaways
 1	Drop missing data + base model tuning	Good accuracy (86%), poor minority class recall
 2	Value imputation + class weighting	Better recall, but underrepresentation remained
 3	Full imputation + manual oversampling	Best balance across classes, improved F1 scores
 
-Final model performance improved for rare/severe earthquakes (Class 3), but limitations remained due to data size and imbalance.
+**Final model performance improved for rare/severe earthquakes (Class 3), but limitations remained due to data size and imbalance.**
 
-🔍 Analysis & Insights
-Real-world seismic data is naturally imbalanced — low-risk quakes dominate.
+## 🔍 Analysis & Insights
+* Real-world seismic data is naturally imbalanced — low-risk quakes dominate.
 
-Accuracy alone is misleading; recall and F1-score matter for rare class detection.
+* Accuracy alone is misleading; recall and F1-score matter for rare class detection.
 
-Manual balancing helped reveal model learning capabilities under constrained data.
+* Manual balancing helped reveal model learning capabilities under constrained data.
 
-🚧 Limitations
-Small dataset (782 entries)
+## 🚧 Limitations
+* Small dataset (782 entries)
 
-Severe class imbalance
+* Severe class imbalance
 
-High variance in test set performance depending on approach
+* High variance in test set performance depending on approach
 
-Risk of overfitting with oversampling
+* Risk of overfitting with oversampling
 
-🔮 Future Work
-Expand dataset with new seismic events
+## 🔮 Future Work
+* Expand dataset with new seismic events
 
-Incorporate deep learning (e.g., LSTM for time-based data)
+* Incorporate deep learning (e.g., LSTM for time-based data)
 
-Add topological and geological features
+* Add topological and geological features
 
-Use real-time data pipelines for live prediction
+* Use real-time data pipelines for live prediction
 
-Explore advanced ensemble and boosting models
+* Explore advanced ensemble and boosting models
 
-🛠️ Tech Stack
-Languages: Python
+## 🛠️ Tech Stack
+### Languages: Python
 
-Libraries:
+### Libraries:
 
-pandas, numpy — Data manipulation
+* pandas, numpy — Data manipulation
 
-matplotlib, seaborn — Visualization
+* matplotlib, seaborn — Visualization
 
-scikit-learn — ML models and preprocessing
+* scikit-learn — ML models and preprocessing
 
-KMeans, SVM, RandomForestClassifier, MLPClassifier
+* KMeans, SVM, RandomForestClassifier, MLPClassifier
