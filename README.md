@@ -73,9 +73,9 @@ Accuracy
 
 ## 📈 Results Summary
 Test	Methodology	Key Takeaways
-1	Drop missing data + base model tuning	Good accuracy (86%), poor minority class recall
-2	Value imputation + class weighting	Better recall, but underrepresentation remained
-3	Full imputation + manual oversampling	Best balance across classes, improved F1 scores
+1.	Drop missing data + base model tuning	Good accuracy (86%), poor minority class recall
+2.	Value imputation + class weighting	Better recall, but underrepresentation remained
+3.	Full imputation + manual oversampling	Best balance across classes, improved F1 scores
 
 **Final model performance improved for rare/severe earthquakes (Class 3), but limitations remained due to data size and imbalance.**
 
